@@ -2,7 +2,7 @@ name: simple ci workflow
 on:
   push:
     branches:
-      - main
+      - master
 jobs:
   mytestbuild:
     runs-on: ubuntu-latest
