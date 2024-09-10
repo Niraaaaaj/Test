@@ -1,12 +1,21 @@
-name: simple ci workflow
+name: s3
 on:
   push:
     branches:
-      - master
+    -  master
 jobs:
-  mytestbuild:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: PRINT A TEST MESSAGE
-        run: echo "hello from $GITHUB_ACTOR!"
+    - name: Checkout
+      uses: actions/checkout@v1
+
+    - name: AWS
+      uses: aws-actions/configure-aws-credentials@v1
+      with: 
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_ID }}
+        aws-region: us-east-1
+
+    - name: s3 deploy
+      run: aws s3 cp . s3://bayern06/ --recursive
