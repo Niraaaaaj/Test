@@ -22,6 +22,6 @@ jobs:
 
     - name: Notify SNS
       run: |
-        aws sns publish arn:aws:sns:us-east-1:090159890550:testnotification\
+        aws sns publish \
           --topic-arn  arn:aws:sns:us-east-1:090159890550:testnotification\
           --message "Deployment to S3 completed. Files have been uploaded to s3://bayern30/."
