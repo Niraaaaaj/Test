@@ -18,10 +18,10 @@ jobs:
         aws-region: ${{ secrets.AWS_S3_REGION }}
 
     - name: s3 deploy
-      run: aws s3 sync . s3://bayern30/ --size-only
+      run: aws s3 sync . s3://bayern30/ --time
 
     - name: Notify SNS
       run: |
         aws sns publish \
-          --topic-arn  arn:aws:sns:us-east-1:090159890550:unsubscribe\
-          --message "Deployment to S3 completed. Files have been uploaded to s3://bayern30/."
+          --topic-arn  arn:aws:sns:us-east-1:090159890550:File_add\
+          --message "Deployment to S3 completed. New files have been uploaded to s3://bayern30/."
