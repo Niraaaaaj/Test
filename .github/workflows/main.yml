@@ -18,7 +18,7 @@ jobs:
         aws-region: ${{ secrets.AWS_S3_REGION }}
 
     - name: s3 deploy
-      run: aws s3 sync . s3://bayern30/ --time
+      run: aws s3 sync . s3://bayern30/ --timestamp
 
     - name: Notify SNS
       run: |
