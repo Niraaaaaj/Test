@@ -3,425 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
+    <title>Niraj Dhungana - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="favicon.ico">
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: 'Poppins', sans-serif;
-            color: #333;
-            background-color: #f0f4f8;
-            line-height: 1.6;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* Header */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
         header {
-            background: #343a40;
-            padding: 20px 40px;
+            background-color: #5A67D8;
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .navbar {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        .navbar .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        header a {
+        .navbar a {
             color: white;
-            margin-left: 30px;
+            padding: 14px 20px;
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        header a:hover {
-            color: #ff4d4d;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: url('hero-background.jpg') no-repeat center center/cover;
-            color: white;
             text-align: center;
-            padding: 150px 20px;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            background-color: rgba(0, 0, 0, 0.7);
         }
 
-        .hero h1 {
-            font-size: 4rem;
-            margin: 0;
-            font-weight: 700;
-        }
-
-        .hero p {
-            font-size: 1.8rem;
-            margin: 10px 0 20px;
-        }
-
-        .hero .cta-btn {
-            background: #ff4d4d;
-            color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            font-weight: 500;
+        .navbar a:hover {
+            background-color: #48BB78;
             border-radius: 5px;
-            transition: all 0.3s;
         }
 
-        .hero .cta-btn:hover {
-            background: white;
-            color: #ff4d4d;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        /* About Section */
-        .about {
-            display: flex;
-            padding: 80px 40px;
-            background-color: #ffffff;
-            align-items: center;
-        }
-
-        .about img {
+        .profile-img {
             border-radius: 50%;
-            border: 5px solid #ff4d4d;
-            margin-right: 50px;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
         }
 
-        .about .about-text {
-            max-width: 600px;
-        }
-
-        .about h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #111;
-        }
-
-        .about p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-        }
-
-        .about a {
-            background: #ff4d4d;
-            color: white;
-            padding: 10px 25px;
-            text-decoration: none;
-            font-weight: 500;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        .about a:hover {
-            background: #ff1a1a;
-        }
-
-        /* Skills Section */
-        .skills {
-            background: #343a40;
-            color: white;
-            padding: 100px 40px;
-            text-align: center;
-        }
-
-        .skills h2 {
-            color: #ff4d4d;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 40px;
-        }
-
-        .skills .skill-bars {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .skills .skill-bars div h3 {
-            font-weight: 500;
-            color: white;
-            margin-bottom: 10px;
-        }
-
-        .skills .skill-bars div .progress {
-            background: #ffffff;
-            border-radius: 5px;
-            height: 25px;
-            position: relative;
-        }
-
-        .skills .skill-bars div .progress::before {
-            content: '';
-            background: #ff4d4d;
-            height: 100%;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-
-        .skills .skill-bars div:nth-child(1) .progress::before {
-            width: 90%;
-        }
-
-        .skills .skill-bars div:nth-child(2) .progress::before {
-            width: 85%;
-        }
-
-        .skills .skill-bars div:nth-child(3) .progress::before {
+        .container {
             width: 80%;
+            margin: 0 auto;
         }
 
-        .skills .skill-bars div:nth-child(4) .progress::before {
-            width: 75%;
-        }
-
-        .skills .skill-bars div:nth-child(5) .progress::before {
-            width: 70%;
-        }
-
-        .skills .skill-bars div:nth-child(6) .progress::before {
-            width: 65%;
-        }
-
-        /* Projects Section */
-        .projects {
-            padding: 100px 40px;
-            background-color: #ffffff;
-        }
-
-        .projects h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
+        h1, h2 {
             margin-bottom: 20px;
         }
 
-        .project-item {
+        .tagline {
+            font-size: 1.2em;
             margin-bottom: 20px;
         }
 
-        /* Contact Section */
-        .contact {
-            padding: 100px 40px;
-            background-color: #f0f4f8;
-        }
-
-        .contact h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .contact-section {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            padding: 40px 0;
-        }
-
-        .contact-option {
-            background: #ffffff;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            flex: 1;
-            max-width: 300px;
-            text-align: center;
-        }
-
-        .contact-option h3 {
-            margin-top: 10px;
-            font-size: 1.5rem;
-        }
-
-        .contact-option p {
-            margin: 10px 0;
-            color: #666;
-        }
-
-        .contact-option button {
-            background: #ff4d4d;
+        .btn {
+            background-color: #48BB78;
             color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .contact-option button:hover {
-            background: #ff1a1a;
-        }
-
-        /* Footer */
-        footer {
-            background: #343a40;
-            padding: 30px;
-            color: white;
-            text-align: center;
-        }
-
-        footer a {
-            color: #ff4d4d;
+            padding: 10px 20px;
             text-decoration: none;
-        }
-
-        /* Social Media Links */
-        .social-links {
+            border-radius: 5px;
             margin-top: 20px;
         }
 
-        .social-links a {
+        .btn:hover {
+            background-color: #38A169;
+        }
+
+        #about, #skills, #projects, #contact {
+            padding: 40px 0;
+        }
+
+        .skills-grid, .project-grid {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .skill-card, .project-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            flex: 1;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-card i, .project-card h3 {
+            color: #5A67D8;
+            margin-bottom: 10px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background-color: #48BB78;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #38A169;
+        }
+
+        footer {
+            background-color: #2D3748;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .social-icons a {
             color: white;
             margin: 0 10px;
-            font-size: 1.5rem;
-            transition: color 0.3s;
+            font-size: 1.5em;
         }
 
-        .social-links a:hover {
-            color: #ff4d4d;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .social-icons a:hover {
+            color: #48BB78;
         }
     </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="logo">
-      <h1 style="color: #ff4d4d;">NIRAJ DHUNGANA</h1>
-    </div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="#about">Home</a>
+            </div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
     </nav>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <h1>Niraj Dhungana.</h1>
-    <p>DevOps Engineer | Django Developer</p>
-    <a href="#projects" class="cta-btn">View My Work</a>
-  </section>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="profile">
+                <img src="Niraj.jpg" alt="Niraj Dhungana" class="profile-img">
+                <h1>Niraj Dhungana</h1>
+                <p class="tagline">Django Developer | DevOps Enthusiast</p>
+                <a href="NIRAJ_DHUNGANA_CV.pdf" class="btn" target="_blank">Download CV</a>
+            </div>
+        </div>
+    </header>
 
-  <!-- About Section -->
-  <section class="about" id="about">
-    <img src="Niraj.jpg" alt="Niraj Dhungana" width="200">
-    <div class="about-text">
-        <h2>About Me</h2>
-        <p>I am a DevOps Engineer and Django Developer with a passion for building scalable infrastructures and deploying applications efficiently. My experience includes working with cloud technologies, CI/CD pipelines, and agile methodologies to ensure high-quality software delivery.</p>
-        <a href="NIRAJ_DHUNGANA_CV.pdf" target="_blank">Download CV</a>
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am Niraj Dhungana, a software developer with a strong background in Python, Django, and cloud technologies. I am passionate about building scalable web applications and have experience in DevOps practices and CI/CD pipelines.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Programming</h3>
+                    <p>Python, JavaScript, Java, PHP</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Databases</h3>
+                    <p>PostgreSQL, MySQL</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud Services</h3>
+                    <p>AWS, Azure</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>DevOps</h3>
+                    <p>CI/CD, Docker, Kubernetes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Automated Form Filler</h3>
+                    <p>A Python application that automates the process of filling feedback forms using Selenium.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Student Management System</h3>
+                    <p>A web-based system to manage students' records and activities using PHP and MySQL.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Online Car Rental System</h3>
+                    <p>Developed a Python-based system using Flask and MySQL for renting vehicles based on user needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Contact Section -->
+<section id="contact">
+    <div class="container">
+        <h2>Contact Me</h2>
+        <p>If you would like to collaborate or have any questions, feel free to contact me using the form below.</p>
+        <form class="contact-form" action="mailto:nirajdhunganaofficial@gmail.com" method="POST" enctype="text/plain">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
     </div>
 </section>
 
-  <!-- Skills Section -->
-  <section class="skills" id="skills">
-      <h2>My Skills</h2>
-      <div class="skill-bars">
-          <div>
-              <h3>DevOps</h3>
-              <div class="progress">
-                  <span></span>
-              </div>
-          </div>
-          <div>
-              <h3>Django</h3>
-              <div class="progress">
-                  <span></span>
-              </div>
-          </div>
-          <div>
-              <h3>Cloud Computing</h3>
-              <div class="progress">
-                  <span></span>
-              </div>
-          </div>
-          <div>
-              <h3>CI/CD</h3>
-              <div class="progress">
-                  <span></span>
-              </div>
-          </div>
-          <div>
-              <h3>JavaScript</h3>
-              <div class="progress">
-                  <span></span>
-              </div>
-          </div>
-          <div>
-              <h3>Python</h3>
-              <div class="progress">
-                  <span></span>
-              </div>
-          </div>
-      </div>
-  </section>
 
-  <!-- Projects Section -->
-  <section class="projects" id="projects">
-    <h2>Projects</h2>
-    <div class="project-item">
-      <h3>Automated Form Filler</h3>
-      <p>A Python application to automatically fill faculty feedback forms. Tools used: Selenium, Python, ChromeDriver, HTML DOM.</p>
-    </div>
-    <div class="project-item">
-      <h3>Student Management System</h3>
-      <p>A web application for managing student and staff records, attendance, courses, etc. Tools used: PHP, MySQL, HTML, CSS, JavaScript.</p>
-    </div>
-    <div class="project-item">
-      <h3>Online Car Rental System</h3>
-      <p>A Python-based web application to rent vehicles for a specific number of days according to user needs. Tools used: Python, Flask, MySQL DB.</p>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="contact" id="contact">
-      <h2>Contact Me</h2>
-      <div class="contact-section">
-          <div class="contact-option">
-              <span class="icon"><i class="fas fa-envelope"></i></span>
-              <h3>Email Me</h3>
-              <p>For any issues or concerns, fill out the form on my Customer Comments page.</p>
-              <button class="email-button" onclick="window.location.href='mailto:nirajdhunganaofficial@gmail.com'">Send Email</button>
-          </div>
-          <div class="contact-option">
-              <span class="icon"><i class="fas fa-phone-alt"></i></span>
-              <h3>Call Me</h3>
-              <p><strong>General Queries:</strong><br><br>(9808243112)</p>
-          </div>
-      </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-      <p>&copy; 2024 Niraj Dhungana. All rights reserved.</p>
-      <div class="social-links">
-        <a href="https://www.facebook.com/niraj.dhungana.583?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/niraj.dhungana/profilecard/?igsh=cG9oZDQwbmF6bzBx" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://np.linkedin.com/in/niraj-dhungana-76a61120a" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/Niraaaaaj/" target="_blank"><i class="fab fa-github"></i></a>
-      </div>
-  </footer>
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Niraj Dhungana. All Rights Reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/niraj.dhungana.583?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/niraj.dhungana/profilecard/?igsh=cG9oZDQwbmF6bzBx" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://np.linkedin.com/in/niraj-dhungana-76a61120a" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/Niraaaaaj/" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
