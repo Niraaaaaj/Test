@@ -20,6 +20,25 @@
             color: #333;
         }
 
+        /* Navigation Bar */
+        nav {
+            background-color: #5A67D8;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #48BB78;
+        }
+
         header {
             background-color: #5A67D8;
             color: white;
@@ -61,8 +80,33 @@
             background-color: #38A169;
         }
 
-        #about, #skills, #projects, #contact {
+        #about, #education, #skills, #projects, #contact {
             padding: 40px 0;
+        }
+
+        /* Education Section */
+        .education-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .education-item {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .education-item h3 {
+            color: #5A67D8;
+            margin-bottom: 5px;
+        }
+
+        .education-item p {
+            margin: 5px 0;
+            font-size: 0.9em;
+            color: #666;
         }
 
         .skills-grid, .project-grid {
@@ -122,6 +166,15 @@
 </head>
 <body>
 
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
     <!-- Header Section -->
     <header>
         <div class="container">
@@ -139,6 +192,25 @@
         <div class="container">
             <h2>About Me</h2>
             <p>I am Niraj Dhungana, a software developer with a strong background in Python, Django, and cloud technologies. I am passionate about building scalable web applications and have experience in DevOps practices and CI/CD pipelines.</p>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            <ul class="education-list">
+                <li class="education-item">
+                    <h3>Bachelor of Information Management</h3>
+                    <p>Kantipur College of Management and Information Technology</p>
+                    <p>November 2018 – June 2023</p>
+                </li>
+                <li class="education-item">
+                    <h3>+2, Management</h3>
+                    <p>Trinity International College</p>
+                    <p>July 2016 - April 2018</p>
+                </li>
+            </ul>
         </div>
     </section>
 
